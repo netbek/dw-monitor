@@ -43,7 +43,7 @@ while [[ $# -gt 0 ]]; do
     esac
 done
 
-# Render env files
+# Render .env files
 templates=(
     ${template_env_dir}/docker-compose.env      .env
     ${template_env_dir}/cadvisor.env            ${env_dir}/cadvisor.env
