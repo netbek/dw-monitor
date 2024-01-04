@@ -49,3 +49,19 @@ function render_template() {
         ghcr.io/netbek/jinja2-docker:v0.0.5 \
         "${context[@]}"
 }
+
+function open_cmd() {
+    local url=$1
+    local os=$(uname -s)
+
+    if [ "$os" == "Linux" ]; then
+        xdg-open "$url" 2> /dev/null
+    elif [ "$os" == "Darwin" ]; then
+        open "$url"
+    elif [ "$os" == "CYGWIN" ] || [ "$os" == "MINGW" ]; then
+        start "$url"
+    else
+        echo "Unsupported operating system"
+        exit 1
+    fi
+}

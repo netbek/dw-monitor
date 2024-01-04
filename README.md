@@ -42,6 +42,16 @@ docker compose up -d
 
 If you prefer to run the containers in the foreground, then omit the `-d` option.
 
+## Dashboards
+
+The following Docker containers provide dashboards. The `open.sh` script only opens a URL or application, so remember to start the relevant container(s) beforehand.
+
+| Service            | Command                            |
+|--------------------|------------------------------------|
+| `cadvisor`         | `./scripts/open.sh cadvisor`       |
+| `grafana`          | `./scripts/open.sh grafana`        |
+| `prometheus`       | `./scripts/open.sh prometheus`     |
+
 ## Networking
 
 The following ports are exposed:
@@ -52,7 +62,13 @@ The following ports are exposed:
 | prometheus         | 29050 | HTTP                  |
 | grafana            | 29060 | HTTP                  |
 
-The configuration is loaded from `./.env` during startup. The default values are in `./template_env/docker-compose.env`.
+The configuration is loaded from `./.env` during startup.
+
+## Resources
+
+- [cAdvisor docs](https://github.com/google/cadvisor/blob/master/README.md)
+- [Grafana docs](https://grafana.com/docs/grafana/latest/)
+- [Prometheus docs](https://prometheus.io/docs/introduction/overview/)
 
 ## License
 
