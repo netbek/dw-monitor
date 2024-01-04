@@ -13,8 +13,8 @@ function echo_help() {
 
 cd "${root_dir}"
 
-template_env_dir="template_env"
-env_dir=".env_files"
+template_env_dir="./template_env"
+env_dir="./.env_files"
 
 mkdir -p "${env_dir}"
 
@@ -45,11 +45,12 @@ done
 
 # Render .env files
 templates=(
-    ${template_env_dir}/docker-compose.env      .env
-    ${template_env_dir}/cadvisor.env            ${env_dir}/cadvisor.env
-    ${template_env_dir}/grafana.env             ${env_dir}/grafana.env
-    ${template_env_dir}/prometheus.env          ${env_dir}/prometheus.env
+    docker-compose.env.jinja2       ./.env
+    cadvisor.env.jinja2             ${env_dir}/cadvisor.env
+    grafana.env.jinja2              ${env_dir}/grafana.env
+    prometheus.env.jinja2           ${env_dir}/prometheus.env
 )
+context=()
 
 for ((i = 1; i < ${#templates[@]}; i+=2)); do
     template_file="${templates[i-1]}"
@@ -60,7 +61,7 @@ for ((i = 1; i < ${#templates[@]}; i+=2)); do
             echo "Skipped ${template_file} because ${output_file} exists"
         fi
     else
-        render_template . "${template_file}" > "${output_file}"
+        render_template "${template_env_dir}" "${template_file}" "${context[@]}" > "${output_file}"
 
         if [ -f "${output_file}" ]; then
             if [ "$quiet" == false ]; then
