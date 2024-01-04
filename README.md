@@ -54,15 +54,13 @@ The following Docker containers provide dashboards. The `open.sh` script only op
 
 ## Networking
 
-The following ports are exposed:
+The following ports are exposed. The configuration is loaded from `./.env` during startup.
 
 | Service            | Port  | Protocol              |
 |--------------------|-------|-----------------------|
 | `cadvisor`         | 29040 | HTTP                  |
 | `prometheus`       | 29050 | HTTP                  |
 | `grafana`          | 29060 | HTTP                  |
-
-The configuration is loaded from `./.env` during startup.
 
 ## Resources
 
