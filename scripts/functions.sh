@@ -65,3 +65,7 @@ function open_cmd() {
         exit 1
     fi
 }
+
+function yq_cmd() {
+    docker run --rm -i -v "${PWD}":/workdir mikefarah/yq:4.40.4 "$@"
+}
