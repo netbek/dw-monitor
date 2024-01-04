@@ -58,9 +58,9 @@ The following ports are exposed:
 
 | Service            | Port  | Protocol              |
 |--------------------|-------|-----------------------|
-| cadvisor           | 29040 | HTTP                  |
-| prometheus         | 29050 | HTTP                  |
-| grafana            | 29060 | HTTP                  |
+| `cadvisor`         | 29040 | HTTP                  |
+| `prometheus`       | 29050 | HTTP                  |
+| `grafana`          | 29060 | HTTP                  |
 
 The configuration is loaded from `./.env` during startup.
 
