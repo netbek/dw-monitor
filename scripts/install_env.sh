@@ -45,10 +45,10 @@ done
 
 # Render .env files
 templates=(
-    docker-compose.env.jinja2       ./.env
-    cadvisor.env.jinja2             ${env_dir}/cadvisor.env
-    grafana.env.jinja2              ${env_dir}/grafana.env
-    prometheus.env.jinja2           ${env_dir}/prometheus.env
+    env.jinja2                                ./.env
+    env_files/cadvisor.env.jinja2             ${env_dir}/cadvisor.env
+    env_files/grafana.env.jinja2              ${env_dir}/grafana.env
+    env_files/prometheus.env.jinja2           ${env_dir}/prometheus.env
 )
 context=()
 
