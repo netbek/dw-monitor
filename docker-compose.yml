@@ -6,7 +6,7 @@ volumes:
 
 services:
   cadvisor:
-    image: gcr.io/cadvisor/cadvisor:v0.47.2
+    image: gcr.io/cadvisor/cadvisor:v0.49.1
     container_name: cadvisor
     env_file:
       - ./.env_files/cadvisor.env
@@ -19,7 +19,7 @@ services:
       - /var/lib/docker/:/var/lib/docker:ro
 
   prometheus:
-    image: prom/prometheus:v2.48.1
+    image: prom/prometheus:v2.51.2
     command: --config.file=/etc/prometheus/prometheus.yml --log.level=warn
     env_file:
       - ./.env_files/prometheus.env
@@ -32,7 +32,7 @@ services:
       - cadvisor
 
   grafana:
-    image: grafana/grafana-oss:10.2.3
+    image: grafana/grafana-oss:10.4.2
     env_file:
       - ./.env_files/grafana.env
     ports:
