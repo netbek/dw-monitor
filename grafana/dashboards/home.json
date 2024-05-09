@@ -233,14 +233,14 @@
               "uid": "dw-analytics-prometheus"
             },
             "editorMode": "code",
-            "expr": "container_memory_usage_bytes{name=\"dw-clickhouse-clickhouse-1\"} / 1e6",
+            "expr": "container_memory_rss{name=\"dw-clickhouse-clickhouse-1\"} / 1e6",
             "instant": false,
             "legendFormat": "__auto",
             "range": true,
             "refId": "A"
           }
         ],
-        "title": "clickhouse: container_memory_usage_bytes (MB)",
+        "title": "clickhouse: container_memory_rss (MB)",
         "type": "timeseries"
       },
       {
@@ -423,14 +423,14 @@
               "uid": "dw-analytics-prometheus"
             },
             "editorMode": "code",
-            "expr": "container_memory_usage_bytes{name=\"dw-analytics-prefect-postgres-1\"} / 1e6",
+            "expr": "container_memory_rss{name=\"dw-analytics-prefect-postgres-1\"} / 1e6",
             "instant": false,
             "legendFormat": "__auto",
             "range": true,
             "refId": "A"
           }
         ],
-        "title": "prefect-postgres: container_memory_usage_bytes (MB)",
+        "title": "prefect-postgres: container_memory_rss (MB)",
         "type": "timeseries"
       },
       {
@@ -613,14 +613,14 @@
               "uid": "dw-analytics-prometheus"
             },
             "editorMode": "code",
-            "expr": "container_memory_usage_bytes{name=\"dw-analytics-prefect-server-1\"} / 1e6",
+            "expr": "container_memory_rss{name=\"dw-analytics-prefect-server-1\"} / 1e6",
             "instant": false,
             "legendFormat": "__auto",
             "range": true,
             "refId": "A"
           }
         ],
-        "title": "prefect-server: container_memory_usage_bytes (MB)",
+        "title": "prefect-server: container_memory_rss (MB)",
         "type": "timeseries"
       },
       {
@@ -803,14 +803,14 @@
               "uid": "dw-analytics-prometheus"
             },
             "editorMode": "code",
-            "expr": "container_memory_usage_bytes{name=\"dw-analytics-cli-1\"} / 1e6",
+            "expr": "container_memory_rss{name=\"dw-analytics-cli-1\"} / 1e6",
             "instant": false,
             "legendFormat": "__auto",
             "range": true,
             "refId": "A"
           }
         ],
-        "title": "cli: container_memory_usage_bytes (MB)",
+        "title": "cli: container_memory_rss (MB)",
         "type": "timeseries"
       }
     ],
