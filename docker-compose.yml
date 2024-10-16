@@ -19,7 +19,7 @@ services:
       - /var/lib/docker/:/var/lib/docker:ro
 
   prometheus:
-    image: prom/prometheus:v2.51.2
+    image: prom/prometheus:v2.54.1
     command: --config.file=/etc/prometheus/prometheus.yml --log.level=warn
     env_file:
       - ./.env_files/prometheus.env
@@ -32,7 +32,7 @@ services:
       - cadvisor
 
   grafana:
-    image: grafana/grafana-oss:10.4.2
+    image: grafana/grafana-oss:10.4.10
     env_file:
       - ./.env_files/grafana.env
     ports:
