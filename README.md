@@ -58,9 +58,9 @@ The following ports are exposed. The configuration is loaded from `./.env` durin
 
 | Service            | Port  | Protocol              |
 |--------------------|-------|-----------------------|
-| `cadvisor`         | 29060 | HTTP                  |
-| `prometheus`       | 29070 | HTTP                  |
-| `grafana`          | 29080 | HTTP                  |
+| `cadvisor`         | 29200 | HTTP                  |
+| `prometheus`       | 29210 | HTTP                  |
+| `grafana`          | 29220 | HTTP                  |
 
 ## Resources
 
