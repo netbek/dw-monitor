@@ -1,8 +1,8 @@
 version: "3.8"
 
 volumes:
-  prometheus_data:
-  grafana_data:
+  prometheus-data:
+  grafana-data:
 
 services:
   cadvisor:
@@ -27,7 +27,7 @@ services:
       - ${DW_PROMETHEUS_PORT:-9090}:9090
     volumes:
       - ./prometheus/prometheus.yml:/etc/prometheus/prometheus.yml:ro
-      - prometheus_data:/prometheus:rw
+      - prometheus-data:/prometheus:rw
     depends_on:
       - cadvisor
 
@@ -42,6 +42,6 @@ services:
       - ./grafana/provisioning/providers.yml:/etc/grafana/provisioning/dashboards/providers.yml:ro
       - ./grafana/dashboards:/etc/dashboards:ro
       - ./grafana/dashboards/home.json:/usr/share/grafana/public/dashboards/home.json:ro
-      - grafana_data:/var/lib/grafana:rw
+      - grafana-data:/var/lib/grafana:rw
     depends_on:
       - prometheus
